@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconds in a day</title>
+</head>
+<body>
+    <p id="output"></p>
+
+    <script>
+        let currentHours = 14;
+        let currentMinutes = 34;
+        let currentSeconds = 42;
+
+        let hourToSeconds = currentHours * 60 * 60; //50400
+        let minuteToSeconds = currentMinutes * 60; //2040
+        let wholeDay = 24 * 60 * 60; //86400
+        let remainingSeconds = wholeDay - (hourToSeconds + minuteToSeconds + currentSeconds);
+
+        document.getElementById("output").innerHTML = `This is how much minute left: ${remainingSeconds} `;
+    </script>
+</body>
+</html>
