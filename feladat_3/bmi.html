@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="bmi.js"></script>
     <title>BMI</title>
 </head>
 <body>
-    <p id="output"></p>
-    <script>
-        let mass_in_kg = 81.2;
-        let height_in_m = 1.78;
+    <label for="mass_in_kg">Írja be testsúlyt kilógrammban:</label>
+    <input type="number" value="81.2" id="mass_in_kg">
+    <br>
 
-        let calc = mass_in_kg / Math.pow(height_in_m, 2);
-        document.getElementById("output").innerHTML = `This is the BMI: ${Math.round(calc)} `;
-    </script>
+    <label for="height_in_m">Írja be a magasságot méterben: </label>
+    <input type="number" value="1.78" id="height_in_m">
+    <br>
+
+    <button onclick="megjelenítés()">Számolás</button>  
+    <p id="output"></p>
 </body>
 </html>
