@@ -4,6 +4,6 @@ function megjelenites(){
 
     for (let i = 0; i < word.length; i++) {
         let element = word[i];
-        document.getElementById('output') = element;
+        document.getElementById('output').innerHTML = element;
     }
 }
