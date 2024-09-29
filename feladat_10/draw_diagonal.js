@@ -1,14 +1,27 @@
 function megjelenites(){
-    let number = document.getElementById('number').value;
-    for (let row = 0; row < number; row++) {
+
+
+const number = parseInt(document.getElementById("number").value);
+
+    let startEndStr = `${"%".repeat(number)}<br>`;
+    let result = startEndStr;
+    let placeOfCharacter = 1;
+
+    for (let y = 0; y < number-2; y++)
+    {
         let line = "";
-        for (let col = 0; col < number; col++) {
-            if (row === 0 || row === number - 1 || col === 0 || col === number - 1 || row === col) {
+
+        for (let i = 0; i < number; i++)
+        {
+            if (i == 0 || i == placeOfCharacter || i == number-1)
                 line += "%";
-            } else {
-                line += " ";
-            }
+            else
+                line += "&nbsp";
+        
         }
-        document.getElementById('output').innerHTML = `${line}`;
+        result += (line + "<br>");
+        placeOfCharacter++;
     }
+    
+    document.getElementById('output').innerHTML = `${result + startEndStr}`;
 }

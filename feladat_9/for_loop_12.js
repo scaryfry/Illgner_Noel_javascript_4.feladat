@@ -1,12 +1,11 @@
 function megjelenites(){
-    var number = document.getElementById('number');
-
+    var number = document.getElementById('number').value;
+    let sumDigits = 0;
     for (let i = 0; i < number.length; i++) {
-        sumDigits += parseInt(number[i]); 
-        countDigits++;
+        sumDigits += parseInt(number.charAt(i)); 
 }
-let avg = sumDigits / countDigits;
-document.getElementById('output').innerHTML = `${avg} az átlaga a számjegyeknek`;
+let avg = sumDigits / number.length;
+document.getElementById('output').innerHTML = `${avg} az átlaga a számjegyeknek.`;
 
 
 }

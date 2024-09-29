@@ -1,23 +1,23 @@
-      function printNumbersWithSkip() {
-        let divisibleBy3Count = 0; 
-        let output = ""; 
+let result = "";
+let baseRule = 1;
+let ruleNow = 1;
 
-        for (let i = 1; i <= 100; i++) {
-            if (i % 3 === 0) {
-                divisibleBy3Count++; 
-
-                if (divisibleBy3Count === 1 || divisibleBy3Count === 2 || divisibleBy3Count === 3) {
-                    continue; 
-                }
-
-                if (divisibleBy3Count === 3) {
-                    divisibleBy3Count = 0;
-                }
-            }
-            output += i + ", ";
-        }
-
-        document.getElementById("output").textContent = output.slice(0, -2);
+for (let i = 1; i < 101; i++)
+{
+    if (i % 3 == 0 && baseRule == ruleNow)
+    {
+        baseRule++; 
+        ruleNow = 1;
+        continue;
     }
+    else if (i % 3 == 0 )
+    {
+        ruleNow++;
+        result += `${i}, `;
+    }
+    else
+        result += `${i}, `;
+}
+console.log(result);
 
-    window.onload = printNumbersWithSkip;
+document.getElementById('output').innerHTML = `${result}`;

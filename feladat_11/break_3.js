@@ -1,13 +1,12 @@
-function ellenorzes(char) {
-    return char.toLowerCase() !== char.toUpperCase();
-}
+function megjelenites(){
 
-function megjelenites() {
-    let str = document.getElementById('str');
-    for (let i = 0; i < str.length; i++) {
-        if (!ellenorzes(str[i])) {
+let str = document.getElementById('str').value;
+for (let i = 0; i < str.length; i++)
+    {
+        let char = str.charCodeAt(i);
+        if ((char >= 65 && char < 91) || (char >= 97 && char < 123))
+            document.getElementById("output").innerHTML += `${str.charAt(i)} <br>`;
+        else
             break;
-        }
-        console.log(str[i]);
     }
 }
